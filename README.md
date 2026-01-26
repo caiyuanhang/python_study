@@ -94,6 +94,6 @@ python 的作者是 Guido van Rossum，因为名字前三个字母的发音跟�
 
 [跳转到此章节](./chapter/一_必备基础知识和前置准备/README.md)
 
-## 二 Python 基础知识
+## 二 Python 核心基础
 
-[跳转到此章节](./chapter/二_Python基础知识/README.md)
+[跳转到此章节](./chapter/二_Python核心基础/README.md)
