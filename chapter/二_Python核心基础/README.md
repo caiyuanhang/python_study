@@ -137,7 +137,65 @@ AGE 是用户年龄
 
 #### 整型
 
-所有不带小数点的数，都是整型，如：18、22。
+所有不带小数点的数，都是整型，可以是正数、负数和 0，如：`18`、`-22`、`0`。
+
+```py
+int1 = 18
+int2 = 20
+int3 = 0
+print('type of int1==', type(int1))
+print('type of int2==', type(int2))
+print('type of int3==', type(int3))
+
+# type of int1== <class 'int'>
+# type of int2== <class 'int'>
+# type of int3== <class 'int'>
+```
+
+当数很大时，可以使用下划线将数据进行分组，来让数字更易读（python 运行这段代码的时候会将下划线去掉），如：`300_000`、`100_000_000`
+
+```py
+int4 = 1_000
+int5 = 999_999_999
+print('int4==', int4)
+print('int5==', int5)
+
+# int4== 1000
+# int5== 999999999
+```
+
+**扩展内容：**
+
+python 中整数的上限值取决于执行代码的计算机的内存和处理能力，运行如下所示代码会提示报错：`ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit`
+
+```py
+testNumMaxLen = 9 ** 9999
+print('testNumerLen==', testNumMaxLen)
+
+'''
+Traceback (most recent call last):
+  File "D:\python_study\chapter\二_Python核心基础\codes\整型.py", line 17, in <module>
+    print('testNumerLen==', testNumMaxLen)
+    ~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+ValueError: Exceeds the limit (4300 digits) for integer string conversion; use sys.set_int_max_str_digits() to increase the limit
+'''
+```
+
+之所以有这个报错，是因为 print 在打印数字的时候，内部会将数字转换成字符串再打印。
+
+在 python 内部数字转字符串时，要求数字不能超过 4300 位，于是有了这个报错。如果要解开这个限制，按照报错提示使用 `sys.set_int_max_str_digits(0)` 方法即可解除这个限制，参数为 0 代表不限制。
+
+```py
+import sys
+
+testNumMaxLen = 9 ** 9999
+sys.set_int_max_str_digits(0)
+print('testNumerLen==', testNumMaxLen)
+
+# testNumerLen== 295700380801935532...（数字太长以省略号代表）
+```
+
+[相关代码：整型.py](./codes/整型.py)
 
 #### 浮点型
 
@@ -147,7 +205,45 @@ AGE 是用户年龄
 
 ### 查看数据类型
 
-python 中可以通过内置函数 `type()`，来查看某个数据的数据类型。
+#### 查看基本数据类型
+
+python 中可以通过内置函数 `type()`，来查看某个数据的数据类型，如下示例：
+
+- 字符串类型是 `str`
+- 整型类型是 `int`
+- 浮点型类型是 `float`
+
+```py
+str1 = '张三'
+str1Type = type(str1)
+print('type of str1==', str1Type)
+
+str2 = '18'
+str2Type = type(str2)
+print('type of str2==', str2Type)
+
+str3 = '22.2'
+str3Type = type(str3)
+print('type of str3==', str3Type)
+
+int1 = 20
+int1Type = type(int1)
+print('type of int1==', int1Type)
+
+float1 = 25.2
+float1Type = type(float1)
+print('type of float1==', float1Type)
+
+# type of str1== <class 'str'>
+# type of str2== <class 'str'>
+# type of str3== <class 'str'>
+# type of int1== <class 'int'>
+# type of str1== <class 'float'>
+```
+
+[相关代码：数据类型.py](./codes/数据类型.py)
+
+#### 查看引用数据类型
 
 **注意：**python 中的变量是没有类型的，这个变量的类型指的是变量所对应的值的类型。
 
