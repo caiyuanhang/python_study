@@ -4,11 +4,11 @@
 
 2025 年 TIOBE 编程语言排行榜：
 
-![2025 年 TIOBE 编程语言排行榜](./source/2025年TIOBE编程语言排行榜.png)
+![2025 年 TIOBE 编程语言排行榜](./sources/2025年TIOBE编程语言排行榜.png)
 
 历年来各编程语言 TIOBE 指数走势：
 
-![历年来各编程语言 TIOBE 指数走势](./source/历年来各编程语言TIOBE指数走势.png)
+![历年来各编程语言 TIOBE 指数走势](./sources/历年来各编程语言TIOBE指数走势.png)
 
 Python 能做：
 
